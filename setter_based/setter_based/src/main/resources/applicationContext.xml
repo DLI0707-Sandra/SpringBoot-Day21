@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Engine bean -->
+    <bean id="engine" class="com.example.setter_based.Engine">
+        <property name="type" value="V8"/>
+    </bean>
+
+    <!-- Define the Car bean and inject the Engine bean using setter injection -->
+    <bean id="car" class="com.example.setter_based.Car">
+        <property name="engine" ref="engine"/>
+    </bean>
+
+</beans>
