@@ -1,0 +1,15 @@
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Engine bean -->
+    <bean id="engine" class="com.example.constructor_based.Engine" />
+
+    <!-- Define the Car bean and inject the Engine bean via constructor -->
+    <bean id="car" class="com.example.constructor_based.Car">
+        <constructor-arg ref="engine" />
+    </bean>
+
+</beans>
